@@ -1,0 +1,50 @@
+import java.util.*;
+class Alternate
+{
+public static List<Integer> alternate(List<Integer> list1, List<Integer> list2) {
+    Iterator<Integer> i1 = list1.iterator();
+    Iterator<Integer> i2 = list2.iterator();
+    List<Integer> result = new ArrayList<Integer>();
+    while(i1.hasNext() || i2.hasNext())
+    {
+        if (i1.hasNext()) {
+            result.add(i1.next());
+        }
+        
+        if (i2.hasNext()) {
+            result.add(i2.next());
+        }
+    }
+    return result;
+ }
+}
+public class Collections_Q3 
+{
+	public static void main(String[] args){
+        System.out.println("Name:-Md Amanulllah \n University Roll no. 2016852 \n Course :- B.Tech(CSE) \n Semester :- IV");
+		Scanner sc=new Scanner(System.in);
+		List<Integer> L1 = new ArrayList<>(); 
+		System.out.print("enter size of first list:");
+        int n=sc.nextInt();
+        System.out.print("enter items of first list:");
+        for(int i=0;i<n;i++)
+        {
+        	int a=sc.nextInt();
+        	L1.add(a);
+        }
+		List<Integer> L2 = new ArrayList<>(); 
+		System.out.print("enter size of second list:");
+        int m=sc.nextInt();
+        System.out.print("enter items of second list:");
+        for(int i=0;i<m;i++)
+        {
+        	int a=sc.nextInt();
+        	L2.add(a);
+        }
+		List<Integer> L3 = new ArrayList<>(); 
+		L3=Alternate.alternate(L1,L2);
+		System.out.println(L1);
+		System.out.println(L2);
+		System.out.println(L3);
+	}
+}
